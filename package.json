@@ -1,0 +1,46 @@
+{
+  "name": "backend-faworki",
+  "version": "1.0.0",
+  "description": "Backend API para FaWorKi - Aplicación de trabajo freelance",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node start-production.js",
+    "start:dev": "node server.js",
+    "dev": "node scripts/pre-flight-check.js && nodemon server.js",
+    "build": "npm install && node scripts/pre-flight-check.js",
+    "check": "node scripts/pre-flight-check.js",
+    "test:mongodb": "node scripts/test-mongodb-connection.js",
+    "setup:mongodb-indexes": "node scripts/setup-mongodb-indexes.js"
+  },
+  "keywords": [
+    "api",
+    "backend",
+    "faworki",
+    "freelance"
+  ],
+  "author": "FaWorKi Team",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "bcryptjs": "^3.0.2",
+    "cloudinary": "^2.8.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^8.5.1",
+    "helmet": "^7.1.0",
+    "joi": "^18.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "mercadopago": "^2.9.0",
+    "mongodb": "^7.0.0",
+    "morgan": "^1.10.0",
+    "multer": "^2.0.2",
+    "node-cron": "^4.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: workclean-api
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: MONGODB_URI
+        sync: false # Debes configurarlo en el dashboard de Render
+      - key: JWT_SECRET
+        sync: false # Debes configurarlo en el dashboard de Render
+      - key: MERCADOPAGO_ACCESS_TOKEN
+        sync: false # Debes configurarlo en el dashboard de Render
+      - key: CORS_ORIGINS
+        value: "http://localhost:5173, https://tu-frontend.vercel.app" # Ajusta con tu URL real de Vercel
+    healthCheckPath: /health
